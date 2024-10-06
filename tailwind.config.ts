@@ -17,7 +17,7 @@ const config: Config = {
 		},
 		extend: {
 			container: {
-				center: true, // Исправлено на булевое значение
+				center: true, // Исправлено на булевое значение true
 				padding: {
 					DEFAULT: '20px',
 					lg: '80px',
