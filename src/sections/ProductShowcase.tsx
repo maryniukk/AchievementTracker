@@ -6,7 +6,7 @@ import tubeImage from '@/assets/tube.png';
 import HyperText from '@/components/ui/hyper-text';
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { Fade } from 'react-awesome-reveal';
+import { Fade, Slide } from 'react-awesome-reveal';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 import ShowcaseCard from '@/components/showcaseCard/ShowcaseCard';
@@ -69,28 +69,32 @@ export const ProductShowcase = () => {
 						/>
 					</div>
 					<div className='mt-10 px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
-						<ShowcaseCard
-							image={<Leaf />}
-							title={'Integration ecosystem'}
-							subTitle={
-								'Track your progress and motivate your efforts every day.'
-							}
-						/>
-						<ShowcaseCard
-							image={<Target />}
-							title={'Goal setting and tracking'}
-							subTitle={'Set and track goals with manageable task breakdowns.'}
-						/>
-						<ShowcaseCard
-							image={<Secure />}
-							title={'Secure data encryption'}
-							subTitle={'Ensure your data’s safety with top-tier encryption.'}
-						/>
-						<ShowcaseCard
-							image={<Notification />}
-							title={'Customizable notifications'}
-							subTitle={'Get alerts on tasks and deadlines that matter most.'}
-						/>
+						<Slide>
+							<ShowcaseCard
+								image={<Leaf />}
+								title={'Integration ecosystem'}
+								subTitle={
+									'Track your progress and motivate your efforts every day.'
+								}
+							/>
+							<ShowcaseCard
+								image={<Target />}
+								title={'Goal setting and tracking'}
+								subTitle={
+									'Set and track goals with manageable task breakdowns.'
+								}
+							/>
+							<ShowcaseCard
+								image={<Secure />}
+								title={'Secure data encryption'}
+								subTitle={'Ensure your data’s safety with top-tier encryption.'}
+							/>
+							<ShowcaseCard
+								image={<Notification />}
+								title={'Customizable notifications'}
+								subTitle={'Get alerts on tasks and deadlines that matter most.'}
+							/>
+						</Slide>
 					</div>
 				</div>
 			</Fade>

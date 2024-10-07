@@ -1,3 +1,4 @@
+'use client';
 import avatar1 from '@/assets/avatar-1.png';
 import avatar2 from '@/assets/avatar-2.png';
 import avatar3 from '@/assets/avatar-3.png';
@@ -10,6 +11,7 @@ import avatar9 from '@/assets/avatar-9.png';
 import HyperText from '@/components/ui/hyper-text';
 import { div, map, img, h3, p } from 'framer-motion/client';
 import image from 'next/image';
+import { Fade } from 'react-awesome-reveal';
 import { text } from 'stream/consumers';
 
 const testimonials = [
@@ -77,99 +79,105 @@ export const Testimonials = () => {
 	return (
 		<section className='bg-white py-12'>
 			<div className='container mx-auto'>
-				<div className='section-heading text-center'>
-					<div className='flex justify-center'>
-						<HyperText text='Testimonials' />
+				<Fade>
+					<div className='section-heading text-center'>
+						<div className='flex justify-center'>
+							<HyperText text='Testimonials' />
+						</div>
+						<h2 className='section-title mt-5'>What our users say</h2>
 					</div>
-					<h2 className='section-title mt-5'>What our users say</h2>
-				</div>
-				<div className='flex flex-wrap justify-center items-center mt-10 md:hidden'>
-					{firstTestimonials.map(({ text, imageSrc, name, username }) => {
-						return (
-							<div
-								className='bg-white shadow-lg w-[325px] rounded-3xl mt-3'
-								key={username}
-							>
+					<div className='flex flex-wrap justify-center items-center mt-10 md:hidden'>
+						{firstTestimonials.map(({ text, imageSrc, name, username }) => {
+							return (
 								<div
-									className=' 
-                mx-auto flex flex-col p-5 '
+									className='bg-white shadow-lg w-[325px] rounded-3xl mt-3'
+									key={username}
 								>
-									<p className='mt-4 tracking-tight'>{text}</p>
-									<div className='flex mt-4 items-center'>
-										<img
-											src={imageSrc}
-											alt={name}
-											className='w-[42px] h-[42px] rounded-full'
-										/>
-										<div className='flex flex-col'>
-											<h4 className='font-bold ml-2'>{name}</h4>
-											<span className='text-gray-500 ml-2 text-sm'>
-												{username}
-											</span>
+									<div
+										className=' 
+                mx-auto flex flex-col p-5 '
+									>
+										<p className='mt-4 tracking-tight'>{text}</p>
+										<div className='flex mt-4 items-center'>
+											<img
+												src={imageSrc}
+												alt={name}
+												className='w-[42px] h-[42px] rounded-full'
+											/>
+											<div className='flex flex-col'>
+												<h4 className='font-bold ml-2'>{name}</h4>
+												<span className='text-gray-500 ml-2 text-sm'>
+													{username}
+												</span>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						);
-					})}
-				</div>
-				<div className='hidden md:grid grid-cols-1 py-12 sm:grid-cols-2 md:grid-cols-2 lg:hidden gap-6'>
-					{secondTestimonials.map((testimonial, index) => (
-						<div
-							key={index}
-							className='bg-white p-6 rounded-lg shadow-md rounded-3xl'
-						>
-							<div className='flex items-center mb-4'>
-								<div className='flex'>
-									<img
-										draggable={false}
-										src={testimonial.imageSrc}
-										alt={testimonial.name}
-										className='w-12 h-12 rounded-full mr-4'
-									/>
-									<div className='flex flex-col'>
-										<h3 className='text-lg font-semibold'>
-											{testimonial.name}
-										</h3>
-										<p className='text-sm text-gray-600'>
-											{testimonial.username}
-										</p>
+							);
+						})}
+					</div>
+					<div className='hidden md:grid grid-cols-1 py-12 sm:grid-cols-2 md:grid-cols-2 lg:hidden gap-6'>
+						{secondTestimonials.map((testimonial, index) => (
+							<div
+								key={index}
+								className='bg-white p-6 rounded-lg shadow-md rounded-3xl'
+							>
+								<div className='flex items-center mb-4'>
+									<div className='flex'>
+										<img
+											draggable={false}
+											src={testimonial.imageSrc}
+											alt={testimonial.name}
+											className='w-12 h-12 rounded-full mr-4'
+										/>
+										<div className='flex flex-col'>
+											<h3 className='text-lg font-semibold'>
+												{testimonial.name}
+											</h3>
+											<p className='text-sm text-gray-600'>
+												{testimonial.username}
+											</p>
+										</div>
 									</div>
 								</div>
+								<p className='text-gray-800 tracking-tight'>
+									{testimonial.text}
+								</p>
 							</div>
-							<p className='text-gray-800 tracking-tight'>{testimonial.text}</p>
-						</div>
-					))}
-				</div>
+						))}
+					</div>
 
-				<div className='hidden lg:grid grid-cols-1 py-12 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-					{thirdTestimonials.map((testimonial, index) => (
-						<div
-							key={index}
-							className='bg-white p-6 rounded-lg shadow-md roundex-3xl'
-						>
-							<div className='flex items-center mb-4'>
-								<div className='flex'>
-									<img
-										draggable={false}
-										src={testimonial.imageSrc}
-										alt={testimonial.name}
-										className='w-12 h-12 rounded-full mr-4'
-									/>
-									<div className='flex flex-col'>
-										<h3 className='text-lg font-semibold'>
-											{testimonial.name}
-										</h3>
-										<p className='text-sm text-gray-600'>
-											{testimonial.username}
-										</p>
+					<div className='hidden lg:grid grid-cols-1 py-12 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+						{thirdTestimonials.map((testimonial, index) => (
+							<div
+								key={index}
+								className='bg-white p-6 rounded-lg shadow-md roundex-3xl'
+							>
+								<div className='flex items-center mb-4'>
+									<div className='flex'>
+										<img
+											draggable={false}
+											src={testimonial.imageSrc}
+											alt={testimonial.name}
+											className='w-12 h-12 rounded-full mr-4'
+										/>
+										<div className='flex flex-col'>
+											<h3 className='text-lg font-semibold'>
+												{testimonial.name}
+											</h3>
+											<p className='text-sm text-gray-600'>
+												{testimonial.username}
+											</p>
+										</div>
 									</div>
 								</div>
+								<p className='text-gray-800 tracking-tight'>
+									{testimonial.text}
+								</p>
 							</div>
-							<p className='text-gray-800 tracking-tight'>{testimonial.text}</p>
-						</div>
-					))}
-				</div>
+						))}
+					</div>
+				</Fade>
 			</div>
 		</section>
 	);

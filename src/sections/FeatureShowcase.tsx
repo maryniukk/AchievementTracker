@@ -24,15 +24,14 @@ export const FeatureShowcase = () => {
 							</p>
 						</div>
 
-						{/* Change direction for larger screens */}
 						<div className='flex flex-col lg:flex-row py-10 gap-6 items-center lg:justify-center'>
 							<div className='bg-white shadow-lg w-full max-w-[486px] p-6 rounded-lg'>
 								<div className='flex flex-col items-center'>
 									{<Helix />}
-									<h3 className='text-center text-lg font-semibold mt-4 tracking-tight'>
+									<h3 className='text-center text-lg font-semibold mt-4 tracking-tight text-[#010D3E]'>
 										Integration ecosystem
 									</h3>
-									<p className='text-center text-gray-600 mt-2 tracking-tight'>
+									<p className='text-center mt-2 tracking-tight text-[#010D3E]'>
 										Enhance your productivity by connecting with your favorite
 										tools, keeping all your essentials in one place.
 									</p>
@@ -41,10 +40,10 @@ export const FeatureShowcase = () => {
 							<div className='bg-white shadow-lg w-full max-w-[486px] p-6 rounded-lg'>
 								<div className='flex flex-col items-center'>
 									{<Cube />}
-									<h3 className='text-center text-lg font-semibold mt-4 tracking-tight'>
+									<h3 className='text-center text-lg font-semibold mt-4 tracking-tight text-[#010D3E]'>
 										Goal setting and tracking
 									</h3>
-									<p className='text-center text-gray-600 mt-2 tracking-tight'>
+									<p className='text-center text-[#010D3E] mt-2 tracking-tight'>
 										Define and track your goals, breaking down objectives into
 										achievable tasks to keep your targets in sight.
 									</p>
