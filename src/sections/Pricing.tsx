@@ -1,6 +1,9 @@
 import HyperText from '@/components/ui/hyper-text';
 import Tick from '@/assets/tick.svg';
 import WhiteTick from '@/assets/white-tick.svg';
+import AnimatedGradientText from '@/components/ui/animated-gradient-text';
+import { div, h5, span } from 'framer-motion/client';
+import { title } from 'process';
 
 const pricingTiers = [
 	{
@@ -80,19 +83,34 @@ export const Pricing = () => {
 					</p>
 				</div>
 
-				<div className='py-12 grid grid-cols-1 lg:grid-cols-3 gap-6'>
+				<div className='py-12 grid grid-cols-1 md:w-[351px] md:mx-auto lg:w-auto lg:grid-cols-3 gap-6'>
 					{pricingTiers.map((tier, index) => (
 						<div
 							key={index}
-							className={`p-6 rounded-lg shadow-lg ${
+							className={`p-6 rounded-3xl shadow-lg ${
 								tier.popular ? 'bg-black text-white' : 'bg-white text-black'
 							}`}
 						>
-							<div>
-								<h5 className='text-[#6F6C90] pb-[34px] font-bold tracking-tighter'>
-									{tier.title}
-								</h5>
-								<span className='text-5xl font-bold  mb-6'>
+							<div className='mb-[34px] mt-[40px]'>
+								{!tier.popular ? (
+									<h5 className='text-[#6F6C90] font-bold tracking-tighter'>
+										{tier.title}
+									</h5>
+								) : (
+									<div className='flex justify-between items-center'>
+										<h5 className='text-[#6F6C90] font-bold tracking-tighter'>
+											{tier.title}
+										</h5>
+										<div className='ml-auto'>
+											<AnimatedGradientText className='bg-transparent inline-block px-4 py-2 rounded-md'>
+												<span className='bg-gradient-to-r from-[#DD7DFF] via-[#E1CD86] -via-[#8BCB92] -via-[#71C2EF] to-[#3BFFFF] bg-clip-text text-transparent'>
+													Most popular
+												</span>
+											</AnimatedGradientText>
+										</div>
+									</div>
+								)}
+								<span className='text-5xl font-bold mb-6'>
 									${tier.monthlyPrice}
 									<span className='text-sm text-[#6F6C90]'>/monthly</span>
 								</span>
