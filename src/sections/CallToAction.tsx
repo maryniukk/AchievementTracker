@@ -31,7 +31,7 @@ export const CallToAction = () => {
 							data-aos='fade-right'
 							src={Star}
 							alt='Star'
-							className='sm:hidden md:absolute md:block md:w-[362px] md:h-[362px] md:-left-[210px] md:bottom-[110px] lg:-left-[20px] lg:bottom-[110px]'
+							className='sm:hidden md:absolute md:block md:w-[362px] md:h-[362px] md:-left-[180px] md:-bottom-[-330px] lg:-left-[20px] lg:bottom-[400px]'
 							draggable='false'
 						/>
 
@@ -42,10 +42,9 @@ export const CallToAction = () => {
 
 						{/* Изображение спирали */}
 						<Image
-							data-aos='fade-left'
 							src={Spring}
 							alt='Spring'
-							className='hidden md:block md:absolute md:w-[363px] md:h-[363px] md:-right-[150px] md:-bottom-[0px] lg:-right-[20px] lg:-bottom-[0px]'
+							className='hidden md:block md:absolute md:w-[363px] md:h-[363px] md:-right-[150px] md:-bottom-[-340px] lg:-right-[-30px] lg:bottom-[320px]'
 							draggable='false'
 						/>
 
